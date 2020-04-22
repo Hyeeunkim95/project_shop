@@ -1,6 +1,12 @@
 <h1>메인 페이지 입니다.(home controller의 index)</h1>
 <% if user_signed_in? %>
+<%= current_user.email %>
 <a href="/users/sign_out">로그아웃</a>
+
+    <% if current_user.admin == true %>
+    <p>디자이너 전용 공간 입니다.</p>
+    <% end %>
+
 <% else %>
 <a href="users/sign_in">로그인</a>
 <% end %>

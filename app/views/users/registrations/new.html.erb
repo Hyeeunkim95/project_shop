@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>회원가입</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -20,6 +20,15 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+
+<p>등급</p>
+<label class="radio_button">고객
+  <%=f.radio_button :usergrade, '고객', checked: true %>
+</label>
+<label class="radio_button"> 디자이너
+  <%=f.radio_button :usergrade, '디자이너', checked: true %>
+</label>
+
 
   <div class="actions">
     <%= f.submit "Sign up" %>
