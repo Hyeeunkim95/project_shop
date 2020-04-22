@@ -30,6 +30,14 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+  
+  <p>등급</p>
+<label class="radio_button">고객
+  <%=f.radio_button :usergrade, '고객', checked: true %>
+</label>
+<label class="radio_button"> 디자이너
+  <%=f.radio_button :usergrade, '디자이너', checked: true %>
+</label>
 
   <div class="actions">
     <%= f.submit "Update" %>
