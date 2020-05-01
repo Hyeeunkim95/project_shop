@@ -1,0 +1,45 @@
+<% @users = User.all %>
+
+<table>
+    <caption>Lorem</caption>
+    <thead>
+        <tr>
+            <th>no</th>
+            <th>email</th>
+            <th>grade</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <th><%= user.id %></th>
+            <td><%= user.email %></td>
+            <td><%= user.usergrade %></td>
+            <td>
+                
+                <% if user_signed_in? && current_user != user %>
+                    <% if current_user.followings.include?(user) %>
+                        <%= form_tag follow_path(user.id), method: :delete, class: "right" do %>
+                            <button class="btn">팔로우 취소</button>
+                        <% end %>
+                    <% else %>
+                    <%= form_tag follows_path, class: "right" do %>
+                        <input type="hidden" name="followed_id" value="<%= user.id%>" />
+                        <button class="btn">팔로우</button>
+                    <%end%>
+                <%end%>
+                <%end%>
+                
+                
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td colspan="2">Table Foot</td>
+        </tr>
+    </tfoot>
+</table>
