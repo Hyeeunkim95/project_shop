@@ -4,18 +4,23 @@
 <a href="/users/sign_out">로그아웃</a>
 
     <% if current_user.usergrade =='디자이너' %>
+    <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
     <p>디자이너 전용 공간 입니다.</p>
+    <dev>
+        <p>나의 고객</p>
+    </dev>
     
     <% else %>
     <p>고객 전용 공간 입니다.</p>
     <% end %>
 
+
      <% if current_user.usergrade.present? %>
         <p>등급 : <%= current_user.usergrade %></p>
         <% else %>
         <p>등급 정보를 업데이트 해주세요!</p>
-        <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
     <% end %>
+
 
 <% else %>
 <a href="users/sign_in">로그인</a>
