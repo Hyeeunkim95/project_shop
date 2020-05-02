@@ -1,28 +1,22 @@
 <h1>메인 페이지 입니다.(home controller의 index)</h1>
 <% if user_signed_in? %>
     <%= current_user.email %>
-    
     <% if current_user.usergrade.present? %>
         <p>등급 : <%= current_user.usergrade %></p>
     <% else %>
         <p>등급 정보를 업데이트 해주세요!</p>
         <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
     <% end %>
-
     <p>팔로워 : <%= current_user.followers.length %></p>
     <p>팔로잉 : <%= current_user.followings.length %></p>
-    
     <a href="/users/sign_out">로그아웃</a>
-
-    <% if current_user.usergrade =='디자이너' %>
+    <% if current_user.usergrade == '디자이너' %>
         <p>디자이너 전용 공간 입니다.(나중에 지울것)</p>
         <p>내 단골 고객</p>
-        
     <% else %>
         <p>고객 전용 공간 입니다.(나중에 지울것)</p>
         <p>내가 팔로우하는 디자이너</p>
     <% end %>
-
     <table>
         <thead>
             <tr>
@@ -31,7 +25,6 @@
                 <th>grade</th>
             </tr>
         </thead>
-        
         <tbody>
             <% current_user.followings.each do |following| %>
             <tr>
@@ -50,21 +43,13 @@
                         <%end%>
                     <%end%>
                 </td>
+                <td>
+                    <a href="/users/show/<%= following.id %>">상세페이지</a>
+                </td>
             </tr>
             <% end %>
         </tbody>
     </table>
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
 <% else %>
     <a href="users/sign_in">로그인</a>
     <a href="users/sign_up">회원가입</a>
