@@ -1,7 +1,7 @@
 <% @users = User.all %>
 
 <table>
-    <caption>Lorem</caption>
+    <caption>내가 팔로우하는 <%if current_user.usergrade =="디자이너" %> 고객 <%else%> 디자이너 <%end%> List</caption>
     <thead>
         <tr>
             <th>no</th>
