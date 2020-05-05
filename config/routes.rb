@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   resources :follows, only:[:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/home/userlists' => 'home#userlists'
+  get '/home/viplists' => 'home#viplists'
+  get 'home/index' => 'home#index'
+
   get '/users/show/:id' => 'users#show'
+  
   root 'home#index'
 end

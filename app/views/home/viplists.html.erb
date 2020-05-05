@@ -1,0 +1,37 @@
+<h1>단골 고객 목록</h1>
+
+<table>
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>email</th>
+                <th>grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% current_user.followings.each do |following| %>
+            <tr>
+                <th><%= following.id %></th>
+                <td><%= following.email %></td>
+                <td><%= following.usergrade %></td>
+                <td>
+                    <% if current_user.followings.include?(following) %>
+                        <%= form_tag follow_path(following.id), method: :delete, class: "right" do %>
+                            <button class="btn">팔로우 취소</button>
+                        <% end %>
+                    <% else %>
+                        <%= form_tag follows_path, class: "right" do %>
+                            <input type="hidden" name="followed_id" value="<%= following.id%>" />
+                            <button class="btn">팔로우</button>
+                        <%end%>
+                    <%end%>
+                </td>
+                <td>
+                    <a href="/users/show/<%= following.id %>">프로필 보러가기</a>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    
+    <a href="/home/index">돌아가기</a>
