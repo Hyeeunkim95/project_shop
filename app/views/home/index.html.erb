@@ -39,6 +39,10 @@
         <a href="/home/userlists/">전체 디자이너 목록</a>
     <% end %>
     
+    <%= link_to new_post_path do %> 
+        <button class="btn">글 쓰기</button> 
+    <% end %>
+    
     <table>
         <caption>내가 등록한 글</caption>
         <thead>
@@ -57,10 +61,7 @@
                 <td><%= post.content %></td>
                 
                 <td>
-                    
-                
-                    
-                    
+                    <%= link_to "수정", edit_post_path(post), class: "right"%>
                 </td>
             </tr>
             <% end %>
