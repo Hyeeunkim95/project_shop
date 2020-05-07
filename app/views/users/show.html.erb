@@ -4,5 +4,36 @@
 <p>팔로워 : <%= @user.followers.length %></p>
 <p>팔로잉 : <%= @user.followings.length %></p>
 
+<% @posts = current_user.posts.all %>
+    <%= link_to new_post_path do %> 
+        <button class="btn">글 쓰기</button> 
+    <% end %>
+    
+ <table>
+        <caption>내가 등록한 글</caption>
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>작성자</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+                <th><%= post.id %></th>
+                <td><%= post.user.email %></td>
+                <td><%= post.content %></td>
+                
+                <td>
+                    <%= link_to "수정", edit_post_path(post), class: "right"%>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+        
+    </table>
+
 <a href="/home/viplists">돌아가기</a>
 
