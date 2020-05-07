@@ -37,6 +37,11 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
   
+  <div class="field"> 
+		<%= f.label :avatar %><br /> 
+		<%= f.file_field :avatar %> 
+	</div> 
+  
   <p>등급</p>
 <label class="radio_button">고객
   <%=f.radio_button :usergrade, '고객', checked: true %>

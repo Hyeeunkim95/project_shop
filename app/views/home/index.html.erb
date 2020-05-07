@@ -1,7 +1,13 @@
-
+<% @posts = current_user.posts.all %>
 <% if user_signed_in? %>
         <h1><%= current_user.username %>님 환영합니다. </h1>
         <p>이메일 : <%= current_user.email %></p>
+        
+        <% unless current_user.avatar.url.nil? %>
+    		<div class="card-image"> 
+    			<img src="<%= current_user.avatar.url %>" /> 
+    		</div> 
+		<% end %> 
     <% if current_user.usergrade.present? %>
         <p>등급 : <%= current_user.usergrade %></p>
     <% else %>
@@ -26,12 +32,41 @@
     <% if current_user.usergrade == '디자이너' %>
         <p>디자이너 전용 공간 입니다.(나중에 지울것)</p>
         <a href="/home/viplists/">단골 고객 목록</a>
-        <a href="/home/userlists/">전제 고객 목록</a>
+        <a href="/home/userlists/">전체 고객 목록</a>
     <% else %>
         <p>고객 전용 공간 입니다.(나중에 지울것)</p>
         <a href="/home/viplists/">단골 디자이너 목록</a>
         <a href="/home/userlists/">전체 디자이너 목록</a>
     <% end %>
+    
+    <table>
+        <caption>내가 등록한 글</caption>
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>작성자</th>
+                <th>내용</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <% @posts.each do |post| %>
+            <tr>
+                <th><%= post.id %></th>
+                <td><%= post.user.email %></td>
+                <td><%= post.content %></td>
+                
+                <td>
+                    
+                
+                    
+                    
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+        
+    </table>
     
 
 <% else %>
