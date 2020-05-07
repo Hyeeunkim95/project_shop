@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+  get 'posts/create'
+  get 'posts/edit'
+  get 'posts/update'
+  get 'posts/destroy'
   get 'users/show'
   devise_for :users
   resources :follows, only:[:create, :destroy]
@@ -11,4 +16,6 @@ Rails.application.routes.draw do
   get 'home/search'
   root 'home#index'
   get 'home/index/:search_text' => 'home#index'
+  
+  resources :posts, except:[:show]
 end

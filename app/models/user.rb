@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable
   
   # 관계 이름 : follower_relations(다른 이름으로 변경 가능)
   # 외래키 : followed_id
@@ -29,5 +29,5 @@ class User < ApplicationRecord
   
   
   
-  
+  has_many :posts
 end
