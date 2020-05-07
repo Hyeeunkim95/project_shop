@@ -4,6 +4,8 @@
 <p>팔로워 : <%= @user.followers.length %></p>
 <p>팔로잉 : <%= @user.followings.length %></p>
 
+
+<% if current_user.usergrade == '디자이너' %>
 <% @posts = current_user.posts.all %>
     <%= link_to new_post_path do %> 
         <button class="btn">글 쓰기</button> 
@@ -34,6 +36,8 @@
         </tbody>
         
     </table>
-
-<a href="/home/viplists">돌아가기</a>
+    <a href="/home/viplists">돌아가기</a>
+ <% else %>
+     <a href="/home/viplists">돌아가기</a>
+ <% end %>
 

@@ -17,4 +17,10 @@ User.create(email: "designer3@likelion.org", password: "111111", password_confir
 
 
 Follow.destroy_all
-Follow.create(followed_id:"1", follower_id: "2")
+Follow.create(followed_id:"1", follower_id: "4")
+Follow.create(followed_id:"1", follower_id: "5")
+Follow.create(followed_id:"2", follower_id: "6")
+
+Post.destroy_all
+Post.create(text: "첫번째글", user_id: "1")
+Post.create(text: "두번째글", user_id: "1")

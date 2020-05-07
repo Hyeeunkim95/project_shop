@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   get 'posts/index'
   get 'posts/create'
   get 'posts/edit'
@@ -11,11 +11,16 @@ Rails.application.routes.draw do
   get 'home/userlists' => 'home#userlists'
   get 'home/viplists' => 'home#viplists'
   get 'home/index' => 'home#index'
-
+  
   get 'users/show/:id' => 'users#show'
+  get 'posts/create/:id' => 'users#show'
+  
+  post 'posts/create/:id' => 'users#show'
+  
   get 'home/search'
   root 'home#index'
   get 'home/index/:search_text' => 'home#index'
-  
   resources :posts, except:[:show]
 end
+  
+
