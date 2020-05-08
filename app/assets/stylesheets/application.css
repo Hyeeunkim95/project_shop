@@ -14,4 +14,7 @@
  *= require_self
  */
 
-* {color:#ffffff;}
+
+* {color:#ffffff; font-size:15px; font-weight: 600;}
+
+body{background-color:#1B1816 !important; max-width: 420px; margin: 0 auto;}
