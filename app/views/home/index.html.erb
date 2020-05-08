@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
         <h1><%= current_user.username %>님 환영합니다. </h1>
-        <p>이메일 : <%= current_user.email %></p>
+        <p>이메일 : <%= current_user.email %> <a href="/users/sign_out">로그아웃</a> </p>
         
         <% unless current_user.avatar.url.nil? %>
     		<div class="card-image"> 
@@ -15,9 +15,10 @@
     <% end %>
     <p>팔로워 : <a href="/home/followerlists/"><%= current_user.followers.length %></a>
     <p>팔로잉 : <a href="/home/viplists/"><%= current_user.followings.length %></a>
-    <a href="/users/sign_out">로그아웃</a>
     
-
+   
+    
+  
     <form action="/home/search" method="GET">
         <input type="text" name="search_path">
         <button type="submit">검색</button>
@@ -32,6 +33,12 @@
         <p>디자이너 전용 공간 입니다.(나중에 지울것)</p>
         <a href="/home/viplists/">단골 고객 목록</a>
         <a href="/home/userlists/">전체 고객 목록</a>
+        
+        <p>나의 예약 현황</p>
+        <div>09:00 09:30 10:00 10:30 11:00 11:30 12:00</div>
+        <div>13:00 13:30 14:00 14:30 15:00 15:30 16:00</div>
+        <div>16:30 17:00 17:30 18:00 18:30 19:00 19:30</div>
+        
     <% else %>
         <p>고객 전용 공간 입니다.(나중에 지울것)</p>
         <a href="/home/viplists/">단골 디자이너 목록</a>
