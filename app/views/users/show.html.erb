@@ -37,7 +37,9 @@
                         <td><%= post.user.username %></td>
                         <!-- <td><%= post.archived.email %></td> -->
                         
-                        <a href = "/posts/show/<%= post.id %>"><%= post.created_at.strftime("%F") %></a>
+                        <td>
+                            <a href = "/posts/show/<%= post.id %>"><%= post.created_at.strftime("%F") %></a>
+                        </td>
                         
                         <td>
                             <a href="/posts/edit/<%= post.id %>">수정</a>
