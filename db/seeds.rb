@@ -22,6 +22,9 @@ Follow.create(followed_id:"1", follower_id: "5")
 Follow.create(followed_id:"2", follower_id: "6")
 
 Post.destroy_all
-Post.create(content: "첫번째글", user_id: "1")
-Post.create(content: "두번째글", user_id: "1")
+Post.create(content: "커트, 염색 진행", price: "10,000", user_id: "4", archived_id: "1")
+Post.create(content: "탈색, 펌 진행", price: "20,000", user_id: "4", archived_id: "1")
+Post.create(content: "커트, 염색 진행", price: "15,000", user_id: "5", archived_id: "2")
+Post.create(content: "커트, 염색 진행", price: "15,000", user_id: "6", archived_id: "3")
+
 

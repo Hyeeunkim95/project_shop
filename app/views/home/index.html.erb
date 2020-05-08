@@ -8,7 +8,7 @@
     		</div> 
 		<% end %> 
     <% if current_user.usergrade.present? %>
-        <p>등급 : <%= current_user.usergrade %></p>
+        <p>구 분 : <%= current_user.usergrade %></p>
     <% else %>
         <p>등급 정보를 업데이트 해주세요!</p>
         <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
@@ -29,8 +29,8 @@
     <% end %>
     
     
-    <% if current_user.usergrade == '디자이너' %>
-        <p>디자이너 전용 공간 입니다.(나중에 지울것)</p>
+   <!-- <% if current_user.usergrade == '디자이너' %>
+        <p>디자이너 전용 공간 입니다.(나중에 지울것)</p> 
         <a href="/home/viplists/">단골 고객 목록</a>
         <a href="/home/userlists/">전체 고객 목록</a>
         
@@ -39,7 +39,7 @@
         <p>고객 전용 공간 입니다.(나중에 지울것)</p>
         <a href="/home/viplists/">단골 디자이너 목록</a>
         <a href="/home/userlists/">전체 디자이너 목록</a>
-    <% end %>
+    <% end %> -->
     
 
 <% else %>
