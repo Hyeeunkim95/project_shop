@@ -24,10 +24,7 @@ class User < ApplicationRecord
   has_many :followings, through: :following_relations, source: :followed
   
   
-  
-  
-  
-  
+  has_many :archiveds, class_name: "Post"
   
   
   has_many :posts

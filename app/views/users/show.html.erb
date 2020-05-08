@@ -1,5 +1,6 @@
 <h1><%= @user.username %>님의 프로필</h1>
 <p>이메일 : <%= @user.email %></p>
+<p>연락처 : <%= @user.phonenumber %></p>
 <p>등급 : <%= @user.usergrade %></p>
 <p>팔로워 : <%= @user.followers.length %></p>
 <p>팔로잉 : <%= @user.followings.length %></p>
@@ -10,28 +11,52 @@
     <%= link_to new_post_path do %> 
         <button class="btn">글 쓰기</button> 
     <% end %>
-    
+    <a href="/posts/new/<%= @user.id %>">제출</a>
  <table>
         <caption>내가 등록한 글</caption>
         <thead>
             <tr>
                 <th>no</th>
                 <th>작성자</th>
-                <th>내용</th>
+                <!-- <th>고객명</th> -->
+                <th>날짜</th>
             </tr>
         </thead>
         
         <tbody>
             <% @posts.each do |post| %>
-            <tr>
-                <th><%= post.id %></th>
-                <td><%= post.user.email %></td>
-                <td><%= post.content %></td>
                 
-                <td>
-                    <%= link_to "수정", edit_post_path(post), class: "right"%>
-                </td>
-            </tr>
+               
+            
+            
+            
+            
+                <% if post.archived.id == @user.id %>
+                    <tr>
+                        <th><%= post.id %></th>
+                        <td><%= post.user.username %></td>
+                        <!-- <td><%= post.archived.email %></td> -->
+                        
+                        <td><%= post.created_at.strftime %></td>
+                        
+                        <td>
+                            <a href="/posts/edit/<%= post.id %>">수정</a>
+                        </td>
+                        
+                        <td>
+                            <a href="/posts/show/<%= post.id %>">보기</a>
+                        </td>
+                        
+                    </tr>
+                <% else %>
+                    
+                <% end %>
+            
+            
+            
+            
+            
+            
             <% end %>
         </tbody>
         

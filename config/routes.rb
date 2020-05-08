@@ -16,12 +16,23 @@
   get 'users/show/:id' => 'users#show'
   get 'posts/create/:id' => 'users#show'
   
-  post 'posts/create/:id' => 'users#show'
+  post 'posts/create/:id' => 'users#show#id'
   
   get 'home/search'
   root 'home#index'
   get 'home/index/:search_text' => 'home#index'
   resources :posts, except:[:show]
+  
+  get 'posts/new/:following_id' => 'posts#new'
+  
+  post 'create' => "posts#create"
+  post 'update' => "posts#update"
+  
+  post "edit" => "posts#edit"
+  get "posts/edit/:id" => "posts#edit"
+  post "posts/update/:id" => "posts#update"
+  
+  get "posts/show/:id" => "posts#show"
 end
   
 
