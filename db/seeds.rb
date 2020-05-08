@@ -24,3 +24,4 @@ Follow.create(followed_id:"2", follower_id: "6")
 Post.destroy_all
 Post.create(content: "첫번째글", user_id: "1")
 Post.create(content: "두번째글", user_id: "1")
+
