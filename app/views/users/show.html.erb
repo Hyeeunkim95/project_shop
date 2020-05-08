@@ -19,7 +19,7 @@
                 <th>no</th>
                 <th>작성자</th>
                 <!-- <th>고객명</th> -->
-                <th>내용</th>
+                <th>날짜</th>
             </tr>
         </thead>
         
@@ -37,7 +37,7 @@
                         <td><%= post.user.username %></td>
                         <!-- <td><%= post.archived.email %></td> -->
                         
-                        <td><%= post.content %></td>
+                        <td><%= post.created_at.strftime %></td>
                         
                         <td>
                             <a href="/posts/edit/<%= post.id %>">수정</a>

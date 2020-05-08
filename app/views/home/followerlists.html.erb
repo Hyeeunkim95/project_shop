@@ -1,0 +1,26 @@
+<h1>팔로워 list 목록</h1>
+
+<table>
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>email</th>
+                <th>grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% current_user.followers.each do |follower| %>
+            <tr>
+                <th><%= follower.id %></th>
+                <td><%= follower.email %></td>
+                <td><%= follower.usergrade %></td>
+
+                <td>
+                    <a href="/users/show/<%= follower.id %>">프로필 보러가기</a>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+    
+    <a href="/home/index">돌아가기</a>

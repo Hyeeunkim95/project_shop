@@ -13,8 +13,8 @@
         <p>등급 정보를 업데이트 해주세요!</p>
         <p><a href="/users/edit" class="btn btn-default">프로필수정</a></p>
     <% end %>
-    <p>팔로워 : <%= current_user.followers.length %></p>
-    <p>팔로잉 : <%= current_user.followings.length %></p>
+    <p>팔로워 : <a href="/home/followerlists/"><%= current_user.followers.length %></a>
+    <p>팔로잉 : <a href="/home/viplists/"><%= current_user.followings.length %></a>
     <a href="/users/sign_out">로그아웃</a>
     
 
