@@ -1,5 +1,6 @@
 <h1><%= @user.username %>님의 프로필</h1>
 <p>이메일 : <%= @user.email %></p>
+<p>연락처 : <%= @user.phonenumber %></p>
 <p>등급 : <%= @user.usergrade %></p>
 <p>팔로워 : <%= @user.followers.length %></p>
 <p>팔로잉 : <%= @user.followings.length %></p>
@@ -41,6 +42,11 @@
                         <td>
                             <a href="/posts/edit/<%= post.id %>">수정</a>
                         </td>
+                        
+                        <td>
+                            <a href="/posts/show/<%= post.id %>">보기</a>
+                        </td>
+                        
                     </tr>
                 <% else %>
                     

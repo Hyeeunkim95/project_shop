@@ -6,11 +6,16 @@ class PostsController < ApplicationController
   	@posts_count = current_user.posts.length  
   end
   
-  def new
+  def show
+    @post = Post.find(params[:id])
     @following_id = params[:following_id]
     @archived_id = params[:archived_id] 
     
-  	  
+  end
+  
+  def new
+    @following_id = params[:following_id]
+    @archived_id = params[:archived_id] 
   end
   
 
@@ -19,6 +24,7 @@ class PostsController < ApplicationController
     new_post.user_id = current_user.id
     new_post.archived_id = params[:archived_id]
     new_post.content = params[:content]
+    new_post.price = params[:price]
     new_post.image = params[:image]
     new_post.save
     redirect_to "/users/show/#{params[:archived_id]}"
@@ -37,6 +43,7 @@ class PostsController < ApplicationController
     post.user_id = current_user.id
     post.archived_id = params[:archived_id]
     post.content = params[:content]
+    post.price = params[:price]
     post.image = params[:image]
     post.save
     

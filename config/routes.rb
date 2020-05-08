@@ -30,6 +30,8 @@
   post "edit" => "posts#edit"
   get "posts/edit/:id" => "posts#edit"
   post "posts/update/:id" => "posts#update"
+  
+  get "posts/show/:id" => "posts#show"
 end
   
 

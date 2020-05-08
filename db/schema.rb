@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_100322) do
     t.integer "user_id"
     t.integer "archived_id"
     t.text "content"
+    t.integer "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_05_07_100322) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "phonenumber"
     t.string "usergrade"
     t.boolean "admin"
     t.string "avatar"

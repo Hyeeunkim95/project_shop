@@ -12,7 +12,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       # 글 내용을 저장할 content
       t.text        :content
       
-      
+      t.integer        :price
 
       t.timestamps
     end

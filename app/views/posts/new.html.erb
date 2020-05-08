@@ -10,9 +10,13 @@
                     <div class="input-field"> 
                 		<%= file_field_tag :image %> 
                 	</div> 
-                    <div class="input-field"> 
-                    <%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "무슨 생각을 하고 있나요?" %> 
+                   <div class="input-field"> 
+                    시술금액 : <%= text_area_tag :price, nil, class: "materialize-textarea", placeholder: "시술 금액을 입력해주세요." %> 
                     </div> 
+                    <div class="input-field"> 
+                    고객 메모 :<%= text_area_tag :content, nil, class: "materialize-textarea", placeholder: "무슨 생각을 하고 있나요?" %> 
+                    </div> 
+                    
                     <input type="hidden" value="<%= @following_id %>" name="archived_id"></input>
                     <div class="input-field"> 
                         <%= button_tag "작성하기", class: "btn" %> 
