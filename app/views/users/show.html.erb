@@ -1,23 +1,4 @@
-
-
 <h1><%= @user.username %>님의 프로필</h1>
-  <tbody>
-            
-                    <% if current_user.followings.include?(@user) %>
-                        <%= form_tag follow_path(@user.id), method: :delete, class: "right" do %>
-                            <button class="btn">팔로우 취소</button>
-                        <% end %>
-                    <% else %>
-                        <%= form_tag follows_path, class: "right" do %>
-                            <input type="hidden" name="followed_id" value="<%= @user.id%>" />
-                            <button class="btn">팔로우</button>
-                        <%end%>
-                    <%end%>
-                
-               
-            
-            
-    </tbody>
 <p>이메일 : <%= @user.email %></p>
 <p>연락처 : <%= @user.phonenumber %></p>
 <p>등급 : <%= @user.usergrade %></p>
@@ -56,12 +37,14 @@
                         <td><%= post.user.username %></td>
                         <!-- <td><%= post.archived.email %></td> -->
                         
-                        <td>
                         <a href = "/posts/show/<%= post.id %>"><%= post.created_at.strftime("%F") %></a>
-                        </td>
                         
                         <td>
                             <a href="/posts/edit/<%= post.id %>">수정</a>
+                        </td>
+                        
+                        <td>
+                            <a href="/posts/show/<%= post.id %>">보기</a>
                         </td>
                         
                     </tr>
