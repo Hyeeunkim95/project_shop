@@ -1,22 +1,28 @@
-<h2>Log in</h2>
+
+    <div class="logo">
+      	<%= image_tag "logo_image_motion.svg" %>
+    </div>
+    <div class="login">
+      	<%= image_tag "login.svg" %>
+    </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="login_field">
+    
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "이메일 주소" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="login_field">
+   
+    <%= f.password_field :password, autocomplete: "current-password" , placeholder: "패스워드" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
+  <!--<% if devise_mapping.rememberable? %>
+    <div class="login_field">
       <%= f.check_box :remember_me %>
       <%= f.label :remember_me %>
     </div>
-  <% end %>
+  <% end %> -->
 
   <div class="actions">
     <%= f.submit "Log in" %>
