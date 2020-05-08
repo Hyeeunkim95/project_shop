@@ -1,7 +1,7 @@
 <h1><%= @user.username %>님의 프로필</h1>
 <p>이메일 : <%= @user.email %></p>
 <p>연락처 : <%= @user.phonenumber %></p>
-<p>등급 : <%= @user.usergrade %></p>
+<p>구  분 : <%= @user.usergrade %></p>
 <p>팔로워 : <%= @user.followers.length %></p>
 <p>팔로잉 : <%= @user.followings.length %></p>
 
@@ -17,7 +17,7 @@
         <thead>
             <tr>
                 <th>no</th>
-                <th>작성자</th>
+                <th>디자이너</th></th>
                 <!-- <th>고객명</th> -->
                 <th>날짜</th>
             </tr>
@@ -45,9 +45,7 @@
                             <a href="/posts/edit/<%= post.id %>">수정</a>
                         </td>
                         
-                        <td>
-                            <a href="/posts/show/<%= post.id %>">보기</a>
-                        </td>
+                        
                         
                     </tr>
                 <% else %>
