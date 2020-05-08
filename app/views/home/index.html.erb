@@ -24,8 +24,7 @@
     </form>
     
     <% @users.each do |user| %>
-        <%= user.email %>
-        <a href="/users/show/<%= user.id %>">프로필 보러가기</a>
+       <a href = "/users/show/<%= user.id %>"><%= user.email %></a>
     <% end %>
     
     
@@ -41,20 +40,6 @@
     
 
 <% else %>
-    <div class="logo">
-  	    <%= image_tag "logo_image_motion.svg" %>
-    </div>
-    <div class="login">
-      	<%= image_tag "login.svg" %>
-    </div>
-    <div class="login_button">
-        <div class="user">
-        	<a href="users/sign_in">로그인</a>
-        </div>
-        <div class="user_designer">
-        	<a href="users/sign_up">회원가입</a>
-        </div>
-    </div>
-    
-    
+    <a href="users/sign_in">로그인</a>
+    <a href="users/sign_up">회원가입</a>
 <% end %>
